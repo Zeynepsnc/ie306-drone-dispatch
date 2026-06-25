@@ -49,7 +49,7 @@ class PairwiseAdapter:
 
 
 model = PairwisePolicy()
-model.load_state_dict(torch.load("pairwise_bc.pt", map_location="cpu"))
+model.load_state_dict(torch.load("pairwise_milp_bc.pt", map_location="cpu"))
 
 policy = PairwiseAdapter(model)
 
@@ -58,7 +58,7 @@ config = Config.from_yaml("configs/eval_standard.yaml")
 results = evaluate(
     policy,
     config,
-    seeds=[100, 101, 102]
+    seeds=list(range(300, 320))
 )
 
 print(json.dumps(results["mean"], indent=2))

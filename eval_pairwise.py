@@ -49,7 +49,7 @@ class PairwiseAdapter:
 
 
 model = PairwisePolicy()
-model.load_state_dict(torch.load("pairwise_milp_bc.pt", map_location="cpu"))
+model.load_state_dict(torch.load("pairwise_milp_seed0.pt", map_location="cpu"))
 
 policy = PairwiseAdapter(model)
 
